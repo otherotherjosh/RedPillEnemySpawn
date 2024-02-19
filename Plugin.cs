@@ -12,12 +12,18 @@ namespace RedPill
 
         internal static Plugin Instance;
 
+        internal static Harmony harmony;
+
         private void Awake()
         {
             if (Instance == null) { Instance = this; }
 
             ModDebug.Initialize(PLUGIN_GUID);
             ModDebug.LogInfo($"Plugin {PLUGIN_GUID} (\"{PLUGIN_NAME}\") is loaded!");
+
+            harmony = new Harmony(PLUGIN_GUID);
+
+            harmony.PatchAll();
         }
     }
 }
