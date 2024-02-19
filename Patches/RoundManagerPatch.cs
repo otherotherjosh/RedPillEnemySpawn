@@ -35,7 +35,7 @@ namespace RedPill.Patches
                 if (e.name == "RedPillEnemyType")
                 {
                     ModDebug.LogInfo($"Found {e.name}! Object: {e}");
-                    e.MaxCount = 5;
+                    e.MaxCount = 99;
                     redPillEnemyType = e;
                 }
                 ModDebug.LogInfo($"{e.name}, max: {e.MaxCount}, curve: {e.probabilityCurve.length}, spawningDisabled: {e.spawningDisabled}\n" +
@@ -47,8 +47,11 @@ namespace RedPill.Patches
             {
                 redPill.enemyType = redPillEnemyType;
                 redPill.enemyType.probabilityCurve = probabilityCurve;
-                redPill.rarity = 58;
+                redPill.enemyType.PowerLevel = 1;
+                redPill.rarity = 99;
                 RoundManager.Instance.currentLevel.Enemies = new List<SpawnableEnemyWithRarity>() { redPill };
+
+                
             }
 
             #region list all enemies
