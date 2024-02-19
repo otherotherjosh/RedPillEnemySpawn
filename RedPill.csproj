@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>NBFBs.RedPill</AssemblyName>
-    <Description>Spawns the </Description>
+    <Description>Allows the "Red Pill" test enemy (Obunga) to naturally spawn on moons</Description>
     <Version>0.1.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
