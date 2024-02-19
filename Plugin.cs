@@ -8,7 +8,7 @@ namespace RedPill
     {
         private const string PLUGIN_GUID = "NBFBs.RedPill";
         private const string PLUGIN_NAME = "Red Pill Enemy Spawn";
-        private const string PLUGIN_VERSION = "0.1.0-alpha";
+        private const string PLUGIN_VERSION = "0.1.0";
 
         internal static Plugin Instance;
 
@@ -16,7 +16,8 @@ namespace RedPill
         {
             if (Instance == null) { Instance = this; }
 
-            Logger.LogInfo($"Plugin {PLUGIN_GUID} (\"{PLUGIN_NAME}\") is loaded!");
+            ModDebug.Initialize(PLUGIN_GUID);
+            ModDebug.LogInfo($"Plugin {PLUGIN_GUID} (\"{PLUGIN_NAME}\") is loaded!");
         }
     }
 }
