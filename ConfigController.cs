@@ -10,6 +10,8 @@ namespace RedPill
         private ConfigEntry<int> spawnRarityGeneral;
         private ConfigEntry<bool> spawnRarityFromDifficulty;
 
+        private ConfigEntry<bool> useOriginalAI;
+
         //internal ConfigEntry<int> Rarity
         //{
         //    get => rarity;
@@ -21,6 +23,7 @@ namespace RedPill
 
         public ConfigController(ConfigFile configFile)
         {
+            #region spawn rules
             spawnRarityGeneral = configFile.Bind(
                 "Spawn Rarity",
                 "General rarity",
@@ -31,9 +34,19 @@ namespace RedPill
             spawnRarityFromDifficulty = configFile.Bind(
                 "Spawn Rarity",
                 "General rarity",
-                false,
+                true,
                 "(Overrides general rarity) Use different spawn probabilities for different hazard levels"
             );
+            #endregion
+
+            #region AI rules
+            useOriginalAI = configFile.Bind(
+                "AI",
+                "Use custom AI",
+                true,
+                "(Overrides all other AI options) Enable custom AI behaviors, otherwise use vanilla test enemy AI"
+            );
+            #endregion
         }
     }
 }
