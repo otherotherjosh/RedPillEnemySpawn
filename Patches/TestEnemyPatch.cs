@@ -10,9 +10,21 @@ namespace RedPill.Patches
     {
         [HarmonyPatch(nameof(TestEnemy.Update))]
         [HarmonyPrefix]
-        static void UpdateWithSpeed(ref TestEnemy __instance)
+        static void UpdateSpeed(ref TestEnemy __instance)
         {
-            __instance.agent.speed = 2f;
+            __instance.agent.speed = 10f;
+            if (__instance.closestPlayerDist < 12)
+            {
+                __instance.agent.speed /= 2f;
+            }
+            if (__instance.closestPlayerDist < 8)
+            {
+                __instance.agent.speed /= 2f;
+            }
+            if (__instance.closestPlayerDist < 5)
+            {
+                __instance.agent.speed /= 1.5f;
+            }
         }
     }
 }
