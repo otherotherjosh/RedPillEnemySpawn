@@ -14,7 +14,7 @@ namespace RedPill.Patches
         {
             if (!ConfigController.useOriginalAI.Value) { return; }
 
-            __instance.agent.speed = 10f;
+            __instance.agent.speed = ConfigController.agentSpeedBase.Value;
             if (__instance.closestPlayerDist < 12)
             {
                 __instance.agent.speed /= 2f;

@@ -11,15 +11,7 @@ namespace RedPill
         internal static ConfigEntry<bool> spawnRarityFromDifficulty;
 
         internal static ConfigEntry<bool> useOriginalAI;
-
-        //internal ConfigEntry<int> Rarity
-        //{
-        //    get => rarity;
-        //    set
-        //    {
-        //        rarity.Value = Math.Clamp(value.Value, 0, 100);
-        //    }
-        //}
+        internal static ConfigEntry<float> agentSpeedBase;
 
         internal static void Initialize(ConfigFile configFile)
         {
@@ -48,6 +40,13 @@ namespace RedPill
                 true,
                 "(Overrides all other AI options)\n" +
                 "Enable custom AI behaviors, otherwise use vanilla test enemy AI"
+            );
+
+            agentSpeedBase = configFile.Bind(
+                "AI",
+                "Base movement speed",
+                10f,
+                "How fast the Red Pill moves before being slowed down by player proximity"
             );
             #endregion
         }
