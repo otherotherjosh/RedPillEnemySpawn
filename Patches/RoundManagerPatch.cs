@@ -16,42 +16,37 @@ namespace RedPill.Patches
             EnemyType redPillEnemyType = null;
             AnimationCurve probabilityCurve = null;
             
-            #region list all enemies
-            ModDebug.LogInfo("List of enemies on this level");
-            foreach (SpawnableEnemyWithRarity e in RoundManager.Instance.currentLevel.Enemies)
-            {
-                ModDebug.LogInfo($"(Rarity: {e.rarity}) {e.enemyType.name}");
-            }
-            #endregion
-
             foreach (EnemyType e in Resources.FindObjectsOfTypeAll(typeof(EnemyType)))
             {
-                if (e.name == "BaboonHawk")
+                if (e.name == "Flowerman")
                 {
                     ModDebug.LogInfo($"Found {e.name}! Stealing probability curve...");
                     probabilityCurve = e.probabilityCurve;
-
+                    string curveDetails = "curve: ";
+                    foreach (Keyframe keyf in probabilityCurve.keys)
+                    {
+                        curveDetails += $"[{keyf.time}:{keyf.value}]";
+                    }
+                    ModDebug.LogInfo(curveDetails);
                 }
                 if (e.name == "RedPillEnemyType")
                 {
-                    ModDebug.LogInfo($"Found {e.name}! Object: {e}");
-                    e.MaxCount = 99;
+                    ModDebug.LogInfo($"Found {e.name}!");
+                    e.MaxCount = 1;
                     redPillEnemyType = e;
                 }
-                ModDebug.LogInfo($"{e.name}, max: {e.MaxCount}, curve: {e.probabilityCurve.length}, spawningDisabled: {e.spawningDisabled}\n" +
-                    $"power: {e.PowerLevel}");
+                ModDebug.LogInfo($"{e.name}, max: {e.MaxCount}, curve: {e.probabilityCurve.length}, spawningDisabled: {e.spawningDisabled}, power: {e.PowerLevel}");
             }
 
             SpawnableEnemyWithRarity redPill = new SpawnableEnemyWithRarity();
-            if ( redPillEnemyType != null )
+            if (redPillEnemyType != null)
             {
                 redPill.enemyType = redPillEnemyType;
                 redPill.enemyType.probabilityCurve = probabilityCurve;
-                redPill.enemyType.PowerLevel = 1;
-                redPill.rarity = 99;
-                RoundManager.Instance.currentLevel.Enemies = new List<SpawnableEnemyWithRarity>() { redPill };
-
                 
+                redPill.enemyType.PowerLevel = 2;
+                redPill.rarity = 2;
+                RoundManager.Instance.currentLevel.Enemies.Add(redPill);
             }
 
             #region list all enemies
