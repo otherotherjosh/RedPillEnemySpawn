@@ -13,6 +13,7 @@ namespace RedPill
 
         internal static ConfigEntry<bool> useOriginalAI;
         internal static ConfigEntry<float> agentSpeedBase;
+        internal static ConfigEntry<float> agentSpeedSlowDownAmount;
 
         internal static void Initialize(ConfigFile configFile)
         {
@@ -21,7 +22,7 @@ namespace RedPill
                 "Spawning",
                 "Rarity",
                 1,
-                "Weighted probability of spawning on any moon.\n" +
+                "Weighted probability of spawning on any moon\n" +
                 "For reference, the most common enemy on a moon is usually set to around 50-60\n" +
                 "and the least common (like a Nutcracker on Experimentation) is often 1"
             );
@@ -55,6 +56,14 @@ namespace RedPill
                 "Base movement speed",
                 10f,
                 "How fast the Red Pill moves before being slowed down by player proximity"
+            );
+
+            agentSpeedSlowDownAmount = configFile.Bind(
+                "AI",
+                "Proximity speed effect",
+                2.5f,
+                "How much the Red Pill slows down when it gets close to a player\n" +
+                "The movement speed is divided by this value when the Red Pill is extremely close"
             );
             #endregion
         }

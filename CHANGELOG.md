@@ -2,8 +2,12 @@
 
 ## 0.2.1
 ### Added
-- Config entry for max spawn count
-- Config entry for base move speed
+- Config entries
+	- max spawn count
+	- base movement speed
+	- proximity effect (slow down) intensity
+### Changed
+- Smoother proximity-based speed effect
 
 ## 0.2.0
 ### Added

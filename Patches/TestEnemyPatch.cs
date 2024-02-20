@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using UnityEngine;
 
 namespace RedPill.Patches
 {
@@ -14,19 +15,9 @@ namespace RedPill.Patches
         {
             if (!ConfigController.useOriginalAI.Value) { return; }
 
+            float proximityEffect = Mathf.InverseLerp(15f, 3f, __instance.closestPlayerDist) * ConfigController.agentSpeedSlowDownAmount.Value;
             __instance.agent.speed = ConfigController.agentSpeedBase.Value;
-            if (__instance.closestPlayerDist < 12)
-            {
-                __instance.agent.speed /= 2f;
-            }
-            if (__instance.closestPlayerDist < 8)
-            {
-                __instance.agent.speed /= 2f;
-            }
-            if (__instance.closestPlayerDist < 5)
-            {
-                __instance.agent.speed /= 1.5f;
-            }
+            __instance.agent.speed /= Mathf.Clamp(proximityEffect, 1f, 999f);
         }
     }
 }
