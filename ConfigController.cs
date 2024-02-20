@@ -7,10 +7,10 @@ namespace RedPill
 {
     internal static class ConfigController
     {
-        private static ConfigEntry<int> spawnRarityGeneral;
-        private static ConfigEntry<bool> spawnRarityFromDifficulty;
+        internal static ConfigEntry<int> spawnRarityGeneral;
+        internal static ConfigEntry<bool> spawnRarityFromDifficulty;
 
-        private static ConfigEntry<bool> useOriginalAI;
+        internal static ConfigEntry<bool> useOriginalAI;
 
         //internal ConfigEntry<int> Rarity
         //{
