@@ -21,6 +21,8 @@ namespace RedPill
             ModDebug.Initialize(PLUGIN_GUID);
             ModDebug.LogInfo($"Plugin {PLUGIN_GUID} (\"{PLUGIN_NAME}\") is loaded!");
 
+            ConfigController.Initialize(Config);
+
             harmony = new Harmony(PLUGIN_GUID);
 
             harmony.PatchAll();

@@ -5,12 +5,12 @@ using System.Text;
 
 namespace RedPill
 {
-    internal class ConfigController
+    internal static class ConfigController
     {
-        private ConfigEntry<int> spawnRarityGeneral;
-        private ConfigEntry<bool> spawnRarityFromDifficulty;
+        private static ConfigEntry<int> spawnRarityGeneral;
+        private static ConfigEntry<bool> spawnRarityFromDifficulty;
 
-        private ConfigEntry<bool> useOriginalAI;
+        private static ConfigEntry<bool> useOriginalAI;
 
         //internal ConfigEntry<int> Rarity
         //{
@@ -21,7 +21,7 @@ namespace RedPill
         //    }
         //}
 
-        public ConfigController(ConfigFile configFile)
+        internal static void Initialize(ConfigFile configFile)
         {
             #region spawn rules
             spawnRarityGeneral = configFile.Bind(
@@ -31,12 +31,12 @@ namespace RedPill
                 "Weighted probability of spawning on any moon"
             );
 
-            spawnRarityFromDifficulty = configFile.Bind(
-                "Spawn Rarity",
-                "General rarity",
-                true,
-                "(Overrides general rarity) Use different spawn probabilities for different hazard levels"
-            );
+            //spawnRarityFromDifficulty = configFile.Bind(
+            //    "Spawn Rarity",
+            //    "Get rarity from hazard level",
+            //    false,
+            //    "(Overrides general rarity) Use different spawn probabilities for different hazard levels"
+            //);
             #endregion
 
             #region AI rules
