@@ -1,5 +1,10 @@
 # Red Pill Changelog
 
+## 0.2.1
+### Added
+- Config entry for max spawn count
+- Config entry for base move speed
+
 ## 0.2.0
 ### Added
 - Configuration! Now you can tweak the Red Pill's spawn rarity and disable the custom AI changes
