@@ -8,6 +8,7 @@ namespace RedPill
     internal static class ConfigController
     {
         internal static ConfigEntry<int> spawnRarityGeneral;
+        internal static ConfigEntry<int> spawnCount;
         internal static ConfigEntry<bool> spawnRarityFromDifficulty;
 
         internal static ConfigEntry<bool> useOriginalAI;
@@ -17,19 +18,26 @@ namespace RedPill
         {
             #region spawn rules
             spawnRarityGeneral = configFile.Bind(
-                "Spawn Rarity",
-                "General rarity",
+                "Spawning",
+                "Rarity",
                 1,
                 "Weighted probability of spawning on any moon.\n" +
                 "For reference, the most common enemy on a moon is usually set to around 50-60\n" +
                 "and the least common (like a Nutcracker on Experimentation) is often 1"
             );
 
+            spawnCount = configFile.Bind(
+                "Spawning",
+                "Max count",
+                1,
+                "How many Red Pills can potentially spawn in one day"
+            );
+
             //spawnRarityFromDifficulty = configFile.Bind(
             //    "Spawn Rarity",
             //    "Get rarity from hazard level",
             //    false,
-            //    "(Overrides general rarity) Use different spawn probabilities for different hazard levels"
+            //    "Use different spawn probabilities for different hazard levels"
             //);
             #endregion
 

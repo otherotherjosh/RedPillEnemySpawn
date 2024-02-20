@@ -32,7 +32,7 @@ namespace RedPill.Patches
                 if (e.name == "RedPillEnemyType")
                 {
                     ModDebug.LogInfo($"Found {e.name}!");
-                    e.MaxCount = 1;
+                    e.MaxCount = ConfigController.spawnCount.Value;
                     redPillEnemyType = e;
                 }
                 ModDebug.LogInfo($"{e.name}, max: {e.MaxCount}, curve: {e.probabilityCurve.length}, spawningDisabled: {e.spawningDisabled}, power: {e.PowerLevel}");
