@@ -45,7 +45,7 @@ namespace RedPill.Patches
                 redPill.enemyType.probabilityCurve = probabilityCurve;
                 
                 redPill.enemyType.PowerLevel = 2;
-                redPill.rarity = 2;
+                redPill.rarity = ConfigController.spawnRarityGeneral.Value;
                 RoundManager.Instance.currentLevel.Enemies.Add(redPill);
             }
 

@@ -12,6 +12,8 @@ namespace RedPill.Patches
         [HarmonyPrefix]
         static void UpdateSpeed(ref TestEnemy __instance)
         {
+            if (!ConfigController.useOriginalAI.Value) { return; }
+
             __instance.agent.speed = 10f;
             if (__instance.closestPlayerDist < 12)
             {

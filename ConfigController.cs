@@ -28,7 +28,8 @@ namespace RedPill
                 "Spawn Rarity",
                 "General rarity",
                 1,
-                "Weighted probability of spawning on any moon"
+                "Weighted probability of spawning on any moon.\n" +
+                "For reference, the most common enemy on a moon is usually set to around 50-60"
             );
 
             //spawnRarityFromDifficulty = configFile.Bind(
