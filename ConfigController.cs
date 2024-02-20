@@ -29,7 +29,8 @@ namespace RedPill
                 "General rarity",
                 1,
                 "Weighted probability of spawning on any moon.\n" +
-                "For reference, the most common enemy on a moon is usually set to around 50-60"
+                "For reference, the most common enemy on a moon is usually set to around 50-60\n" +
+                "and the least common (like a Nutcracker on Experimentation) is often 1"
             );
 
             //spawnRarityFromDifficulty = configFile.Bind(
@@ -45,7 +46,8 @@ namespace RedPill
                 "AI",
                 "Use custom AI",
                 true,
-                "(Overrides all other AI options) Enable custom AI behaviors, otherwise use vanilla test enemy AI"
+                "(Overrides all other AI options)\n" +
+                "Enable custom AI behaviors, otherwise use vanilla test enemy AI"
             );
             #endregion
         }
