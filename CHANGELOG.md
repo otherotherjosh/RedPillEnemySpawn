@@ -1,5 +1,10 @@
 # Red Pill Changelog
 
+## 0.2.2
+### Added
+- Config entry for player detection radius
+- More fun text in the README file
+
 ## 0.2.1
 ### Added
 - Config entries
