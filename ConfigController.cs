@@ -14,6 +14,7 @@ namespace RedPill
         internal static ConfigEntry<bool> useOriginalAI;
         internal static ConfigEntry<float> agentSpeedBase;
         internal static ConfigEntry<float> agentSpeedSlowDownAmount;
+        internal static ConfigEntry <float> playerDetectionRadius;
 
         internal static void Initialize(ConfigFile configFile)
         {
@@ -64,6 +65,13 @@ namespace RedPill
                 2.5f,
                 "How much the Red Pill slows down when it gets close to a player\n" +
                 "The movement speed is divided by this value when the Red Pill is extremely close"
+            );
+
+            playerDetectionRadius = configFile.Bind(
+                "AI",
+                "Player tracking distance",
+                12f,
+                "Changes the distance at which the Red Pill can detect a player"
             );
             #endregion
         }
