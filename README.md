@@ -3,8 +3,13 @@ A Lethal Company mod to allow the Red Pill (Obunga) test enemy to spawn naturall
 
 ## What is this? Why did you make this??
 First of all, I (Joshii) claim zero responsibility in the creation of the Obunga.png instakill enemy. Zeekerss put this in their game. Blame Zeekerss.
-"Obunga" is an entity that players have reported spawning underneath the hatch on Gordion.
-I did not know about this existing in the game (or the Obunga meme) until I found out I was able to spawn this unrecognizably named "RedPillTestEnemy" and found this hellish bullsh*t.
+
+I did not know about this existing in the game (or the Obunga meme in general) until I found "RedPillTestEnemy" in the list of spawnable enemies,
+and naively thought it'd be fun to try spawn it in. Then I saw this hellish bullsh*t.
+
+"Obunga" is an entity that players have reported spawning very rarely during normal gameplay... even being sighted hiding underneath the company building!
+Is it true, or were these players being trolled? It was probably the latter, but we're taking that myth and turning it into reality. It's terrifying.
+
 So, why not let it spawn as a regular enemy to hunt you in your quest to meet quota?
 
 ## I installed the mod but I haven't seen Obunga anywhere! What gives?
