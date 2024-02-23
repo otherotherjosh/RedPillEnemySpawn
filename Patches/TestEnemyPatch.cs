@@ -22,9 +22,16 @@ namespace RedPill.Patches
         {
             if (!ConfigController.useOriginalAI.Value) { return; }
 
+            // slow down when close to player
             float proximityEffect = Mathf.InverseLerp(15f, 3f, __instance.closestPlayerDist) * ConfigController.agentSpeedSlowDownAmount.Value;
             __instance.agent.speed = ConfigController.agentSpeedBase.Value;
             __instance.agent.speed /= Mathf.Clamp(proximityEffect, 1f, 999f);
+
+            // slower if outside
+            if (__instance.transform.position.y > -100)
+            {
+                __instance.agent.speed *= 0.5f;
+            }
 
 #if DEBUG
             // maybe don't do this in a release build
