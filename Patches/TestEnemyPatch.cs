@@ -32,15 +32,6 @@ namespace RedPill.Patches
             {
                 __instance.agent.speed *= 0.5f;
             }
-
-#if DEBUG
-            // maybe don't do this in a release build
-            if (ConfigController.playerDetectionRadius.Value != __instance.detectionRadius)
-            {
-                __instance.detectionRadius = ConfigController.playerDetectionRadius.Value;
-                ModDebug.LogInfo($"Changing detection radius to {__instance.detectionRadius}");
-            }
-#endif
         }
     }
 }
