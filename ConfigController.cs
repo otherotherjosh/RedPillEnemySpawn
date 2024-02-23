@@ -62,7 +62,7 @@ namespace RedPill
             agentSpeedSlowDownAmount = configFile.Bind(
                 "AI",
                 "Proximity speed effect",
-                2.5f,
+                4f,
                 "How much the Red Pill slows down when it gets close to a player\n" +
                 "The movement speed is divided by this value when the Red Pill is extremely close"
             );
@@ -70,8 +70,11 @@ namespace RedPill
             playerDetectionRadius = configFile.Bind(
                 "AI",
                 "Player tracking distance",
-                12f,
-                "Changes the distance at which the Red Pill can detect a player"
+                15f,
+                "Changes the distance at which the Red Pill can detect a player\n\n" +
+                "[to be fixed in a later update]\n" +
+                "Changing this seems to mess with Obunga's movement speed\n" +
+                "(but it still slows down when near you, if you don't make this too low)"
             );
             #endregion
         }
