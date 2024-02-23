@@ -1,5 +1,15 @@
 # Red Pill Changelog
 
+## 0.2.3
+### Added
+- Tidbits of information in config file
+### Changed
+- Removed misinformation from README (sort of)
+- Slightly increased default player tracking range
+- Intensified default proximity speed effect
+### Fixed
+- Patched DoAIInterval() instead of Update() when calculating movement speed (it did not need to be called every frame)
+
 ## 0.2.2
 ### Added
 - Config entry for player detection radius
