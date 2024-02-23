@@ -7,8 +7,17 @@ namespace RedPill
 {
     internal static class ConfigController
     {
+        internal enum SpawnLocation
+        {
+            Inside,
+            Outside,
+            Both
+        }
+
         internal static ConfigEntry<int> spawnRarityGeneral;
         internal static ConfigEntry<int> spawnCount;
+        internal static ConfigEntry<SpawnLocation> spawnLocation;
+
         internal static ConfigEntry<bool> spawnRarityFromDifficulty;
 
         internal static ConfigEntry<bool> useOriginalAI;
@@ -33,6 +42,13 @@ namespace RedPill
                 "Max count",
                 1,
                 "How many Red Pills can potentially spawn in one day"
+            );
+
+            spawnLocation = configFile.Bind(
+                "Spawning",
+                "Location",
+                SpawnLocation.Both,
+                "<description of spawn location>"
             );
 
             //spawnRarityFromDifficulty = configFile.Bind(
