@@ -16,8 +16,8 @@ namespace RedPill.Patches
             __instance.detectionRadius = ConfigController.playerDetectionRadius.Value;
         }
 
-        [HarmonyPatch(nameof(TestEnemy.Update))]
-        [HarmonyPrefix]
+        [HarmonyPatch(nameof(TestEnemy.DoAIInterval))]
+        [HarmonyPostfix]
         static void UpdateSpeed(ref TestEnemy __instance)
         {
             if (!ConfigController.useOriginalAI.Value) { return; }
