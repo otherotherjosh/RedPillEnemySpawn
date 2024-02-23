@@ -8,7 +8,7 @@ namespace RedPill
     {
         private const string PLUGIN_GUID = "NBFBs.RedPill";
         private const string PLUGIN_NAME = "Red Pill Enemy Spawn";
-        private const string PLUGIN_VERSION = "0.2.2";
+        private const string PLUGIN_VERSION = "0.2.3";
 
         internal static Plugin Instance;
 

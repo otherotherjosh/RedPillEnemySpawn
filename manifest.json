@@ -1,6 +1,6 @@
 {
   "name": "RedPillEnemySpawn",
-  "version_number": "0.2.2",
+  "version_number": "0.2.3",
   "website_url": "https://github.com/otherotherjosh/RedPillEnemySpawn",
   "description": "Allows the \"Red Pill\" test enemy (Obunga) to naturally spawn on moons",
   "dependencies": [
