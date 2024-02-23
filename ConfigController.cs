@@ -49,7 +49,7 @@ namespace RedPill
                 "Use custom AI",
                 true,
                 "(Overrides all other AI options)\n" +
-                "Enable custom AI behaviors, otherwise use vanilla test enemy AI"
+                "Enable custom AI behaviors, otherwise use vanilla test enemy AI (you cannot outrun the vanilla AI... well, not for long)"
             );
 
             agentSpeedBase = configFile.Bind(
