@@ -3,6 +3,7 @@ using RedPill.Scripts;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using UnityEngine;
 
 namespace RedPill.Patches
@@ -15,6 +16,12 @@ namespace RedPill.Patches
         static void ChangeInstanceVars(ref TestEnemy __instance)
         {
             __instance.detectionRadius = ConfigController.playerDetectionRadius.Value;
+
+            Vector3 pos = __instance.transform.position;
+            // must've spawned outside if nearest vent is far away
+            __instance.isOutside = RoundManager.Instance.allEnemyVents.Min<EnemyVent>(vent => (vent.transform.position - pos).sqrMagnitude) > 5;
+
+            ModDebug.LogInfo($"isOutside = {__instance.isOutside}");
         }
 
         [HarmonyPatch(nameof(TestEnemy.DoAIInterval))]
@@ -29,7 +36,7 @@ namespace RedPill.Patches
             __instance.agent.speed /= Mathf.Clamp(proximityEffect, 1f, 999f);
 
             // slower if outside
-            if (__instance.transform.position.y > -100)
+            if (__instance.isOutside)
             {
                 __instance.agent.speed *= 0.5f;
             }
