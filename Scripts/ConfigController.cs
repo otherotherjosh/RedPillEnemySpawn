@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RedPill
+namespace RedPill.Scripts
 {
     internal static class ConfigController
     {
@@ -23,7 +23,7 @@ namespace RedPill
         internal static ConfigEntry<bool> useOriginalAI;
         internal static ConfigEntry<float> agentSpeedBase;
         internal static ConfigEntry<float> agentSpeedSlowDownAmount;
-        internal static ConfigEntry <float> playerDetectionRadius;
+        internal static ConfigEntry<float> playerDetectionRadius;
 
         internal static void Initialize(ConfigFile configFile)
         {
